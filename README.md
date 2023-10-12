@@ -9,9 +9,9 @@ This full-stack application is based of Gwent, which is a CCG (Collectible Card 
 ### Wireframing - ERD relationships
 
 
-#### Code Used
+### Code Used
 HTML
 CSS
 Javascript
 
-#### Sources/References
+### Sources/References
