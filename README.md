@@ -6,7 +6,15 @@ This full-stack application is based of Gwent, which is a CCG (Collectible Card 
 
 ### Wireframing - Page Layout
 
+
+
+
 ### Wireframing - ERD relationships
+
+![Screenshot 2023-10-12 at 4 56 29 PM](https://github.com/williamrogerschi/Gwent-DeckBuilder/assets/143743893/e116ab36-bfb2-46be-8873-48f749510f46)
+
+
+
 
 
 ### Code Used
