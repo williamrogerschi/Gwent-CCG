@@ -1,4 +1,4 @@
-# Gwent-DeckBuilder
+# Gwent-CCG
 Gwent: The Witcher Card Game - Deck-builder and Card Database
 
 ## Description
