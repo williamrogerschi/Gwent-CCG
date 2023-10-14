@@ -9,45 +9,44 @@ const main = async () => {
     //FACTIONS//
     const NG = await new Faction({
         name: `Nilfgaard`,
-        description: ``
+        description: `More than any other faction, Nilfgaard relies on diplomacy and subterfuge to disrupt enemy strategies and enact its own. The empire plants Spies behind enemy lines to perform sabotage and reveal cards in the opponent’s hand. Well-aware of power’s benefits, Nilfgaardians target the strongest enemy units, crippling them or eliminating them altogether.`
     })
     NG.save()
 
     const ST = await new Faction({
         name: `Scoia'tael`,
-        description: ``
+        description: `As befits guerilla fighters, they often set ambushes: cards played face down which reveal themselves only when the trap has already sprung. To bolster their numbers, the Scoia'tael quickly raise new Commandos, zealous neophytes that take the opponent by surprise.`
     })
     ST.save()
 
     const SY = await new Faction({
         name: `Syndicate`,
-        description: ``
+        description: `The Syndicate features unique mechanics revolving around coins, including Hoard, Tribute, and Insanity.`
     })
     SY.save()
 
     const MO = await new Faction({
         name: `Monsters`,
-        descrption: ``
+        description: `The world of The Witcher is infested with unspeakable horrors, most of which are gathered in the fearsome Monsters faction. They attack in vast numbers that grow into hordes and when brute strength is needed instead, they consume their kin and absorb their strength.`
     })
     MO.save()
 
     const SK = await new Faction({
         name: `Skellige`,
-        descrption: ``
+        description: `Skelligers embrace death’s glory, knowing their priestesses and medics can summon departed heroes from the Graveyard to fight another day. A Skellige player sends units to the Graveyard on purpose… only to bring them back later, stronger than ever. Skelligers also turn wounds to their favor by inciting their bloodied warriors to attack with redoubled strength.`
     })
     SK.save()
 
     const NR = await new Faction({
         name: `Northern Realms`,
-        description: ``
+        description: `The Northern Realms seek to gain control of the battlefield by reinforcing their numbers. Their valiant commanders march in the front lines to inspire their units and boost their strength. Their troops can be protected against attacks and weather spells thanks to Armor and Shields.`
     })
     NR.save()
 
     //RACE
     const races = [
-        { name: `Human`}, { name: `Soldier`}, { name: `Warrior`}, { name: `Vampire`}, { name: `Beast`}, { name: `Elf`}, { name: `Bandit`}, { name: `Dryad`}, { name: `Gnome`}, { name: `Dwarf`}, { name: `Dragon`}, { name: `Relict`}, { name: `Ogroid`}, { name: `Aristocrat`}
+        { name: `Human`}, { name: `Soldier`}, { name: `Warrior`}, { name: `Vampire`}, { name: `Beast`}, { name: `Elf`}, { name: `Bandit`}, { name: `Dryad`}, { name: `Gnome`}, { name: `Dwarf`}, { name: `Dragon`}, { name: `Relict`}, { name: `Ogroid`}, { name: `Aristocrat`},
     ]
-
     await Race.insertMany(races)
     console.log(`Created some races!`)
 
