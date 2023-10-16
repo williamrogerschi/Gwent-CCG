@@ -8,7 +8,7 @@ const factionController = require('./controllers/factionController.js')
 const raceController = require('./controllers/raceController.js')
 const cardFunctionController = require('./controllers/cardFunctionController.js')
 const tagController = require('./controllers/tagController.js')
-
+const cardController = require('./controllers/cardController.js')
 
 
 const PORT = process.env.PORT || 3001
@@ -34,6 +34,8 @@ app.get('/races', raceController.getAllRaces)
 app.get('/interactions', cardFunctionController.getAllCardFunctions)
 //tags
 app.get('/tags', tagController.getAllTags)
+//custom cards
+app.get('/cards', cardController.getAllCustomCards)
 
 
 app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

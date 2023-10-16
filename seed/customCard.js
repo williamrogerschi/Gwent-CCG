@@ -1,8 +1,10 @@
 const db = require('../db/index')
 
-const { Builder, Faction, Race, Tag, CardFunction } = require('../models/ccIndex.js')
+const { Card, Faction, Race, Tag, CardFunction } = require('../models/ccIndex.js')
 
 db.on('error', console.error.bind(console, `MongoDB connection error:`))
+
+
 
 const main = async () => {
 
@@ -44,51 +46,228 @@ const main = async () => {
     NR.save()
 
     //RACE
-    const races = [
-        { name: `Human`}, { name: `Soldier`}, { name: `Warrior`}, { name: `Vampire`}, { name: `Beast`}, { name: `Elf`}, { name: `Bandit`}, { name: `Dryad`}, { name: `Gnome`}, { name: `Dwarf`}, { name: `Dragon`}, { name: `Relict`}, { name: `Ogroid`}, { name: `Aristocrat`},
-    ]
-    await Race.insertMany(races)
-    console.log(`Created some races!`)
+const human = await new Race({
+        name: `Human`
+    })
+human.save()
+
+const soldier = await new Race({
+    name: `Soldier`
+})
+soldier.save()
+
+const warrior = await new Race({
+    name: `Warrior`
+})
+warrior.save()
+
+const vampire = await new Race({
+    name: `Vampire`
+})
+vampire.save()
+
+const beast = await new Race({
+    name: `Beast`
+})
+beast.save()
+
+const elf = await new Race({
+    name: `Elf`
+})
+elf.save()
+
+const bandit = await new Race({
+    name: `Bandit`
+})
+bandit.save()
+
+const dryad = await new Race({
+    name: `Dryad`
+})
+dryad.save()
+
+const gnome = await new Race({
+    name: `Gnome`
+})
+gnome.save()
+
+const dwarf = await new Race({
+    name: `Dwarf`
+})
+dwarf.save()
+
+const dragon = await new Race({
+    name: `Dragon`
+})
+dragon.save()
+
+const relict = await new Race({
+    name: `Relict`
+})
+relict.save()
+
+const ogroid = await new Race({
+    name: `Ogroid`
+})
+ogroid.save()
+
+const aristocrat = await new Race({
+    name: `Aristocrat`
+})
+aristocrat.save()
+
+console.log(`Created some races!`)
 
     //Card Interaction
-    const interactions = [
-        {
-            name: `Order`,
-            description: `An ability triggered manually by the player. Cards with Order cannot be used for 1 turn after being placed on the battlefield.`
-        },
-        {
-            name: `Zeal`,
-            description: `An Order ability can be used on the same turn the card is placed on the battlefield.`
-        },
-        {
-            name: `Deploy`,
-            description: `Triggers an ability when the card is played (as opposite from "Summons").`
-        },
-    ]
-    await CardFunction.insertMany(interactions)
+    const order = await new CardFunction({
+        name: `Order`,
+        description: `An ability triggered manually by the player. Cards with Order cannot be used for 1 turn after being placed on the battlefield.`
+    })
+    order.save()
+
+    const zeal = await new CardFunction({
+        name: `Zeal`,
+        description: `An Order ability can be used on the same turn the card is placed on the battlefield.`
+    })
+    zeal.save()
+
+    const deploy = await new CardFunction({
+        name: `Deploy`,
+        description: `Triggers an ability when the card is played (as opposite from "Summons").`
+    })
+    deploy.save()
     console.log(`Created some interactions!`)
 
-    const tags = [
-        {name: `Adrenaline`}, {name: `Ambush`}, {name: `Assimilate`}, {name: `Berserk`}, {name: `Bonded`}, {name: `Crew`}, {name: `Deathwish`}, {name: `Devotion`}, {name: `Disloyal`},  {name: `Echo`}, {name: `Formation`}, {name: `Insanity`}, {name: `Resupply`}, {name: `Symbiosis`}, {name: `Thrive`}, {name: `Veteran`}, {name: `Bleeding`}, {name: `Bounty`}, {name: `Defender`}, {name: `Doomed`}, {name: `Immunity`}, {name: `Poison`}, {name: `Shield`}, {name: `Spying`}, {name: `Locked`}, {name: `Vitality`}
-    ]
-    await Tag.insertMany(tags)
+    //Tags
+    const adrenaline = await new Tag({
+        name: `Adrenaline`
+    })
+    adrenaline.save()
+
+    const ambush = await new Tag({
+        name: `Ambush`
+    })
+    ambush.save()
+
+    const assimilate = await new Tag({
+        name: `Assimilate`
+    })
+    assimilate.save()
+
+    const berserk = await new Tag({
+        name: `Berserk`
+    })
+    berserk.save()
+
+    const bonded = await new Tag({
+        name: `Bonded`
+    })
+    bonded.save()
+
+    const crew = await new Tag({
+        name: `Crew`
+    })
+    crew.save()
+
+    const deathwish = await new Tag({
+        name: `Deathwish`
+    })
+    deathwish.save()
+
+    const devotion = await new Tag({
+        name: `Devotion`
+    })
+    devotion.save()
+
+    const disloyal = await new Tag({
+        name: `Disloyal`
+    })
+    disloyal.save()
+
+    const echo = await new Tag({
+        name: `Echo`
+    })
+    echo.save()
+
+    const formation = await new Tag({
+        name: `Formation`
+    })
+    formation.save()
+
+    const insanity = await new Tag({
+        name: `Insanity`
+    })
+    insanity.save()
+
+    const resupply = await new Tag({
+        name: `Resupply`
+    })
+    resupply.save()
+
+    const symbiosis = await new Tag({
+        name: `Symbiosis`
+    })
+    symbiosis.save()
+
+    const thrive = await new Tag({
+        name: `Thrive`
+    })
+    thrive.save()
+
+    const veteran = await new Tag({
+        name: `Veteran`
+    })
+    veteran.save()
+
+    const bleeding = await new Tag({
+        name: `Bleeding`
+    })
+    bleeding.save()
+
+    const bounty = await new Tag({
+        name: `Bounty`
+    })
+    bounty.save()
+
+    const defender = await new Tag({
+        name: `Defender`
+    })
+    defender.save()
+
+    const doomed = await new Tag({
+        name: `Doomed`
+    })
+    doomed.save()
+
+    const immunity = await new Tag({
+        name: `Immunity`
+    })
+    immunity.save()
+
+    const shield = await new Tag({
+        name: `Shield`
+    })
+    shield.save()
+
     console.log(`Created some statuses!`)
 
-    // const customCard = [
-    //     {
-    //         faction: [NG._id, ST._id, SY._id, MO._id, SK._id, NR._id],
-    //         race: [races[i]],
-    //         cardFunction: [interactions[i]],
-    //         ability: ``,
-    //         tag: [tags[i]],
-    //         cardType: ``,
-    //         power: ``,
-    //         provision: ``
-    //     }
-    // ]
+    const customCard = [
+        {
+            name: `Benji`,
+            faction: [MO._id],
+            race: [beast._id],
+            cardFunction: [deploy._id],
+            ability: `If this Card is the only card on the battlefield, spawn Saiorse and Sade to the left and right of this card.`,
+            tag: [thrive._id, doomed._id, immunity._id],
+            cardType: `Gold`,
+            power: `8`,
+            provision: `10`,
+            imgURL: `https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80`
+        }
+    ]
 
-    // await Builder.insertOne(customCard)
-    // console.log(`I have created a card!`)
+    await Card.insertMany(customCard)
+    console.log(`I have created a card!`)
 
 }
 

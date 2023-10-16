@@ -2,7 +2,7 @@ const { Schema } = require('mongoose')
 
 const cardBuilderSchema = new Schema(
     {
-        // name: { type: String, require: true },
+        name: { type: String, require: true },
         faction: [{ type: Schema.Types.ObjectId, ref: 'Faction' }],
         race: [{ type: Schema.Types.ObjectId, ref: 'Race' }],
         cardFunction : [{ type: Schema.Types.ObjectId, ref: 'Function' }],

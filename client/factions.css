@@ -1,0 +1,241 @@
+html {
+    font-family: 'Odibee Sans', sans-serif;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.864);
+    position: relative;
+    padding-bottom: 200px;
+}
+
+#images-nav {
+    width: auto;
+    margin: auto;
+    padding: 0;
+}
+
+#factions-header {
+    background-image: url('./assets/Gwent-The-Witcher-Card-Game-Factions.avif');
+    background-size: cover;
+    background-position: 100% 100%;
+    height: 40vh;
+    width: 100%;
+    overflow: hidden;
+    border-bottom: 2px solid black;
+}
+
+ul {
+    list-style-type: none;
+}
+
+#navbar {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.nav-bar {
+    display: flex;
+    align-content: center;
+    position: relative;
+    text-decoration: none;
+    width: auto;
+    padding-bottom: 40px;
+}
+
+a {
+    padding: 0 40px 0 40px;
+    text-decoration: none;
+    color: rgba(10, 219, 128, 0.572);
+    height: 100%;
+}
+
+a:hover {
+    padding: 0 40px 0 40px;
+    text-decoration: none;
+    color: goldenrod;
+    height: 100%;
+}
+
+/* building out main body of page */
+.main-content{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(176, 163, 163);
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+h5 {
+    font-size: 14px;
+    padding-left: 60px;
+    padding-right: 60px;
+    font-weight: 5;
+}
+
+#NG {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+#ng-logo {
+    padding-left: 20px;
+}
+
+#ng-h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: goldenrod;
+    font-size: 30px;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+#SK {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+#sk-logo {
+    padding-left: 20px;
+}
+
+#sk-h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: purple;
+    font-size: 30px;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+#ST {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+#st-logo {
+    padding-left: 20px;
+}
+
+#st-h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: green;
+    font-size: 30px;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+#NR {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+#nr-logo {
+    padding-left: 20px;
+}
+
+#nr-h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: blue;
+    font-size: 30px;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+#MO {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+#mo-logo {
+    padding-left: 20px;
+}
+
+#mo-h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: red;
+    font-size: 30px;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+#SY {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+#sy-logo {
+    padding-left: 20px;
+}
+
+#sy-h2 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: orange;
+    font-size: 30px;
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+
+#h2-container {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    color: rgba(10, 219, 128, 0.572);
+    font-family: 'Odibee Sans', sans-serif;
+}
+
+
+blockquote {
+    margin-bottom: -40px;
+}
+p {
+    font-size: 16px;
+    padding-bottom: 20px;
+}
+
+
+/* footer content */
+.footer-container {
+    background-color: rgba(10, 219, 128, 0.565);
+    padding: 20px;
+    border-top: 2px solid goldenrod;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+#footer-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    width: auto;
+    height: 30px;
+}
