@@ -224,7 +224,7 @@ p {
 /* footer content */
 .footer-container {
     background-color: rgba(10, 219, 128, 0.565);
-    padding: 20px;
+    padding: 20px 1px 20px 1px;
     border-top: 2px solid goldenrod;
     position: absolute;
     bottom: 0;

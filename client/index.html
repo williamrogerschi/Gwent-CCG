@@ -28,6 +28,76 @@
         </ul>
      </div>
 
+     <div class="container">
+        <div class="editor-container">
+            <div class="preview-card">
+                <div class="card">
+                    <div class="bg-img"></div>
+                    <div class="card-border">
+                        <img src="./assets/border1.png">
+                    </div>
+                    <div class="faction"></div>
+                </div>
+                <div class="card-text">
+                    <label for="card-name">Card Name: </label>
+                    <input type="text" id="card-name" name="card-name"><br><br>
+                    <label for="ability">Ability: </label>
+                    <textarea id="freeform" name="freeform" rows="6" cols="40">
+                    </textarea>
+                </div>
+            </div>
+            <div class="edit-card">
+                <form class="custom-card-editor">
+                    <div class="faction-picker">
+                        <h4>Faction:</h4>
+                        <select name="factions" id="card-faction-picker">
+                            <option value="select">--Select a Faction--</option>
+                            <!-- Dropdown via JS Script -->
+                        </select>
+                    </div>
+                    <div class="race-picker">
+                        <h4>Race:</h4>
+                        <select name="race" id="race-faction-picker">
+                            <option value="select">--Select a Race--</option>
+                            <!-- Dropdown via JS Script -->
+                        </select>
+                    </div>
+                    <div class="type-picker">
+                        <h4>Type:</h4>
+                        <select name="type" id="type-faction-picker">
+                            <option value="select">--Card Type--</option>
+                            <!-- Dropdown via JS Script -->
+                        </select>
+                    </div>
+                    <div class="function-picker">
+                        <h4>Card Interaction:</h4>
+                        <select name="cf" id="cf-faction-picker">
+                            <option value="select">--Card Interaction--</option>
+                            <!-- Dropdown via JS Script -->
+                        </select>
+                    </div>
+                    <div class="tag-picker">
+                        <h4>Card Tag:</h4>
+                        <select name="tag" id="tag-faction-picker">
+                            <option value="select">--Card Tags--</option>
+                            <!-- Dropdown via JS Script -->
+                        </select>
+                    </div>
+                    <div class="power-picker">
+                        <label for="card-power">Power: </label>
+                        <input type="text" id="card-power" name="card-power">
+                    </div>
+                    <div class="provision-picker">
+                        <label for="card-provision">Porvision: </label>
+                        <input type="text" id="card-provision" name="card-provision">
+                    </div>
+                    <div class="img-picker"></div>
+                    <div class="submit-container"></div>
+                </form>
+            </div>
+        </div>
+     </div>
+
      <footer class="footer-container">
             <ul id="footer-list">
                 <a target="_blank" href="https://www.linkedin.com/in/billy-rogers-chi/"><img width="40"
