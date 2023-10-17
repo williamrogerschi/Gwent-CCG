@@ -1,11 +1,10 @@
 const { Schema } = require('mongoose')
 
-const factionSchema = new Schema (
+const cardTypeSchema = new Schema (
     {
         name: { type: String, required: true },
-        description: { type: String, required: true },
     },
     { timestamps: true },
 )
 
-module.exports = factionSchema
+module.exports = cardTypeSchema

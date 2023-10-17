@@ -1,10 +1,8 @@
 const db = require('../db/index')
 
-const { Card, Faction, Race, Tag, CardFunction } = require('../models/ccIndex.js')
+const { Card, Faction, Race, Tag, CardFunction, Type } = require('../models/ccIndex.js')
 
 db.on('error', console.error.bind(console, `MongoDB connection error:`))
-
-
 
 const main = async () => {
 
@@ -250,6 +248,16 @@ console.log(`Created some races!`)
     shield.save()
 
     console.log(`Created some statuses!`)
+
+    const gold = await new Type({
+        name: `Gold`
+    })
+    gold.save()
+
+    const bronze = await new Type({
+        name: `Bronze`
+    })
+    bronze.save()
 
     const customCard = [
         {

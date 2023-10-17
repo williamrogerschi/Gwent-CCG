@@ -4,12 +4,14 @@
  const raceSchema = require('./race.js')
  const tagSchema = require('./tag.js')
  const cardFunctionSchema = require('./cardFunction.js')
+ const cardTypeSchema = require('./type.js')
 
  const Card = mongoose.model('card', cardBuilderSchema)
  const Faction = mongoose.model('faction', factionSchema)
  const Race = mongoose.model('race', raceSchema)
 const Tag = mongoose.model('tag', tagSchema)
 const CardFunction = mongoose.model('cardFunction', cardFunctionSchema)
+const Type = mongoose.model('type', cardTypeSchema)
 
 
 module.exports = {
@@ -18,4 +20,5 @@ module.exports = {
     Race,
     Tag,
     CardFunction,
+    Type,
 }
