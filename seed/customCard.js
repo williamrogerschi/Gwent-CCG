@@ -262,13 +262,13 @@ console.log(`Created some races!`)
     const customCard = [
         {
             name: `Benji`,
-            faction: [MO._id],
+            faction: MO._id,
             race: [beast._id],
             cardFunction: [deploy._id],
             ability: `If this Card is the only card on the battlefield, spawn Saiorse and Sade to the left and right of this card.`,
             tag: [thrive._id, doomed._id, immunity._id],
             cardType: `Gold`,
-            power: `8`,
+            power: `12`,
             provision: `10`,
             imgURL: `https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8Mnx8fGVufDB8fHx8fA%3D%3D&w=1000&q=80`
         }
