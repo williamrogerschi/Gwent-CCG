@@ -20,7 +20,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         factionDropdownOptions.innerHTML += `<option value="${factionName}">${factionName}</option><\n>`
     }
 
-    raceDB = await axios.get(`http://localhost:3001/races`)
+    raceDB = await axios.get(`http://localhost:3001/races`, FormData) //this is what we would do to get it onto our card local
     console.log(raceDB)
     let races = raceDB.data
     const raceDropdownOptions = document.querySelector(`#race-card-picker`)
@@ -47,56 +47,56 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         interactionDropdownOptions.innerHTML += `<option value="${interactionName}">${interactionName}</option><\n>`
     }
 
-    // tagDB = await axios.get(`http://localhost:3001/tags`)
-    // console.log(tagDB)
-    // let tags = tagDB.data
-    // const tagDropdownOptions = document.querySelector(`#tag-card-picker`)
-    // for(let i=0; i<tags.length; i++) {
-    //     let tagName = tags[i].name
-    //     tagDropdownOptions.innerHTML += `<option value="${tagName}">${tagName}</option><\n>`
-    // }
+    tagDB = await axios.get(`http://localhost:3001/tags`)
+    console.log(tagDB)
+    let tags = tagDB.data
+    const tagDropdownOptions = document.querySelector(`#tag-card-picker`)
+    for(let i=0; i<tags.length; i++) {
+        let tagName = tags[i].name
+        tagDropdownOptions.innerHTML += `<option value="${tagName}">${tagName}</option><\n>`
+    }
 })
 
 // function for the dropdown for multiple tags being selected //
-document.addEventListener("DOMContentLoaded", function (event) {
-    event.preventDefault()
-    const dropdown = document.querySelector(".tag-card-picker")
-    const dropdownContent = dropdown.querySelector(".dropdown-content")
-    const checkboxes = dropdownContent.querySelectorAll("input[type='checkbox']")
-    const dropbtn = dropdown.querySelector(".dropbtn")
-    const selectedItems = []
+// document.addEventListener("DOMContentLoaded", function (event) {
+//     event.preventDefault()
+//     const dropdown = document.querySelector(".tag-card-picker")
+//     const dropdownContent = dropdown.querySelector(".dropdown-content")
+//     const checkboxes = dropdownContent.querySelectorAll("input[type='checkbox']")
+//     const dropbtn = dropdown.querySelector(".dropbtn")
+//     const selectedItems = []
 
-    dropbtn.addEventListener("click", function (event) {
-        event.preventDefault()
-        dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block"
-    })
+//     dropbtn.addEventListener("click", function (event) {
+//         event.preventDefault()
+//         dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block"
+//     })
 
-    checkboxes.forEach(function (checkbox) {
-        checkbox.addEventListener("change", function () {
-            const itemValue = checkbox.value
-            if (checkbox.checked) {
-                selectedItems.push(itemValue)
-            } else {
-                const index = selectedItems.indexOf(itemValue)
-                if (index !== -1) {
-                    selectedItems.splice(index, 1)
-                }
-            }
-            // Log the selected items
-            console.log("Selected items: " + selectedItems.join(", "))
-        })
-    })
-    // Close the dropdown when clicking outside
-    window.addEventListener("click", function (event) {
-        if (!event.target.matches('.dropbtn')) {
-            dropdownContent.style.display = 'none'
-        }
-    })
-    // Prevent closing the dropdown when clicking inside it
-    dropdownContent.addEventListener("click", function (event) {
-        event.stopPropagation()
-    })
-})
+//     checkboxes.forEach(function (checkbox) {
+//         checkbox.addEventListener("change", function () {
+//             const itemValue = checkbox.value
+//             if (checkbox.checked) {
+//                 selectedItems.push(itemValue)
+//             } else {
+//                 const index = selectedItems.indexOf(itemValue)
+//                 if (index !== -1) {
+//                     selectedItems.splice(index, 1)
+//                 }
+//             }
+//             // Log the selected items
+//             console.log("Selected items: " + selectedItems.join(", "))
+//         })
+//     })
+//     // Close the dropdown when clicking outside
+//     window.addEventListener("click", function (event) {
+//         if (!event.target.matches('.dropbtn')) {
+//             dropdownContent.style.display = 'none'
+//         }
+//     })
+//     // Prevent closing the dropdown when clicking inside it
+//     dropdownContent.addEventListener("click", function (event) {
+//         event.stopPropagation()
+//     })
+// })
 
 //creating function for my card submission//
 function handleSubmit(event) {
@@ -106,17 +106,18 @@ function handleSubmit(event) {
   
     const name = data.get('card-name')
     const ability = data.get('freeform')
-    const faction = data.get('faction-card-picker')
-    const race = data.get('race-card-picker')
-    const cardType = data.get('type-card-picker')
-    const cardFunction = data.get('cf-card-picker')
-    const tag = data.get('tag-card-picker')
+    const faction = data.get('faction-choice')
+    const race = data.get('race-choice')
+    const cardType = data.get('type-choice')
+    const cardFunction = data.get('function-choice')
+    const tag = data.get('tag-choice')
     const power = data.get('card-power')
     const provision = data.get('card-provision')
     const imgURL = data.get('img-picker')
   
     console.log({ name, ability, faction, race, cardType, cardFunction, tag, power, provision, imgURL })
   }
+
   
   const form = document.querySelector('.custom-card-editor')
   form.addEventListener('submit', handleSubmit)
