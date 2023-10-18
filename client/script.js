@@ -2,6 +2,8 @@ let factionDB = new Array
 let raceDB = new Array
 let typeDB = new Array
 let interactionDB = new Array
+let base = `http://localhost:3001/`
+
 
 window.addEventListener('DOMContentLoaded', async (event) => {
     event.preventDefault()
@@ -96,3 +98,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
     })
 })
 
+//creating function for my card submission//
+function handleSubmit(event) {
+    event.preventDefault()
+  
+    const data = new FormData(event.target)
+  
+    const name = data.get('card-name')
+    const ability = data.get('freeform')
+    const faction = data.get('faction-card-picker')
+    const race = data.get('race-card-picker')
+    const cardType = data.get('type-card-picker')
+    const cardFunction = data.get('cf-card-picker')
+    const tag = data.get('tag-card-picker')
+    const power = data.get('card-power')
+    const provision = data.get('card-provision')
+    const imgURL = data.get('img-picker')
+  
+    console.log({ name, ability, faction, race, cardType, cardFunction, tag, power, provision, imgURL })
+  }
+  
+  const form = document.querySelector('.custom-card-editor')
+  form.addEventListener('submit', handleSubmit)
