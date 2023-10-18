@@ -9,8 +9,6 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     event.preventDefault()
     console.log("Loading")
 
-
-
     factionDB = await axios.get(`http://localhost:3001/factions`)
     console.log(factionDB)
     let factions = factionDB.data
@@ -20,7 +18,15 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         factionDropdownOptions.innerHTML += `<option value="${factionName}">${factionName}</option><\n>`
     }
 
-    raceDB = await axios.get(`http://localhost:3001/races`, FormData) //this is what we would do to get it onto our card local
+    //trying to log the selection//
+    factionDropdownOptions.addEventListener('change', selectFaction)
+            
+    function selectFaction (event) {
+    const faction = event.target.value
+    document.getElementById('faction-choice').value = faction
+}
+
+    raceDB = await axios.get(`http://localhost:3001/races`) //FormData this is what we would do to get it onto our card local
     console.log(raceDB)
     let races = raceDB.data
     const raceDropdownOptions = document.querySelector(`#race-card-picker`)
@@ -28,6 +34,14 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let raceName = races[i].name
         raceDropdownOptions.innerHTML += `<option value="${raceName}">${raceName}</option><\n>`
     }
+
+   raceDropdownOptions.addEventListener('change', selectRace)
+            
+    function selectRace (event) {
+    const race = event.target.value
+    document.getElementById('race-choice').value = race
+}
+
 
     typeDB = await axios.get(`http://localhost:3001/types`)
     console.log(typeDB)
@@ -38,6 +52,13 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         typeDropdownOptions.innerHTML += `<option value="${typeName}">${typeName}</option><\n>`
     }
 
+    typeDropdownOptions.addEventListener('change', selectType)
+            
+    function selectType (event) {
+    const type = event.target.value
+    document.getElementById('type-choice').value = type
+}
+
     interactionDB = await axios.get(`http://localhost:3001/interactions`)
     console.log(interactionDB)
     let interaction = interactionDB.data
@@ -47,6 +68,13 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         interactionDropdownOptions.innerHTML += `<option value="${interactionName}">${interactionName}</option><\n>`
     }
 
+    interactionDropdownOptions.addEventListener('change', selectInteraction)
+            
+    function selectInteraction (event) {
+    const interaction = event.target.value
+    document.getElementById('function-choice').value = interaction
+}
+
     tagDB = await axios.get(`http://localhost:3001/tags`)
     console.log(tagDB)
     let tags = tagDB.data
@@ -54,6 +82,16 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     for(let i=0; i<tags.length; i++) {
         let tagName = tags[i].name
         tagDropdownOptions.innerHTML += `<option value="${tagName}">${tagName}</option><\n>`
+    }
+
+    tagDropdownOptions.addEventListener('change', selectTag)
+      
+    let tagArray = []
+    function selectTag (event) {
+    const tag = event.target.value
+    tagArray.push(tag)
+    console.log(tagArray)
+    document.getElementById('tag-choice').value = tagArray
     }
 })
 
@@ -98,26 +136,94 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 //     })
 // })
 
-//creating function for my card submission//
-function handleSubmit(event) {
-    event.preventDefault()
-  
-    const data = new FormData(event.target)
-  
-    const name = data.get('card-name')
-    const ability = data.get('freeform')
-    const faction = data.get('faction-choice')
-    const race = data.get('race-choice')
-    const cardType = data.get('type-choice')
-    const cardFunction = data.get('function-choice')
-    const tag = data.get('tag-choice')
-    const power = data.get('card-power')
-    const provision = data.get('card-provision')
-    const imgURL = data.get('img-picker')
-  
-    console.log({ name, ability, faction, race, cardType, cardFunction, tag, power, provision, imgURL })
-  }
 
+
+
+
+//function to submit my object to BACKEND//
+
+async function handleSubmit(event) {
+    event.preventDefault();
+
+    const data = new FormData(event.target);
+
+    const name = data.get('card-name');
+    const ability = data.get('freeform');
+    const faction = data.get('faction-choice');
+    const race = data.get('race-choice');
+    const cardType = data.get('type-choice');
+    const cardFunction = data.get('function-choice');
+    const tag = data.get('tag-choice');
+    const power = data.get('card-power');
+    const provision = data.get('card-provision');
+    const imgURL = data.get('img-picker');
+
+    console.log({ name, ability, faction, race, cardType, cardFunction, tag, power, provision, imgURL })
+    console.log(data);
+
+
+    try {
+        const card = await axios.post(`http://localhost:3001/cards`, {
+            name: name,
+            faction: faction[0],
+            race: race,
+            cardFunction: cardFunction,
+            ability: ability,
+            tag: tag,
+            cardType: cardType,
+            power: power,
+            provision: provision,
+            imgURL: imgURL,
+            // name: 'Sam',
+            // faction:'Monsters' ,
+            // race: 'Elf',
+            // cardFunction: 'Zeal',
+            // ability: 'Hello',
+            // tag: 'Warrior',
+            // cardType: 'Bronze',
+            // power: 10,
+            // provision: 12,
+            // imgURL: '',
+        })
+
+        console.log(card)
+    } catch (error) {
+        console.error(error)
+    }
+}
+
+const form = document.querySelector('.custom-card-editor')
+form.addEventListener('submit', handleSubmit)
+
+
+//creating function for my card submission//
+// async function handleSubmit (event) {
+//     event.preventDefault()
   
-  const form = document.querySelector('.custom-card-editor')
-  form.addEventListener('submit', handleSubmit)
+
+//     const data = new FormData(event.target)
+  
+//     const name = data.get('card-name')
+//     const ability = data.get('freeform')
+//     const faction = data.get('faction-choice')
+//     const race = data.get('race-choice')
+//     const cardType = data.get('type-choice')
+//     const cardFunction = data.get('function-choice')
+//     const tag = data.get('tag-choice')
+//     const power = data.get('card-power')
+//     const provision = data.get('card-provision')
+//     const imgURL = data.get('img-picker')
+  
+//     console.log({ name, ability, faction, race, cardType, cardFunction, tag, power, provision, imgURL })
+
+//     await axios.post(`${base}cards`, {FormData})
+//     .then(function(res) {
+//         console.log(res)
+//     })
+//     .catch(function (error) {
+//         console.log(error)
+//     })
+// }
+
+//   const form = document.querySelector('.custom-card-editor')
+//   form.addEventListener('submit', handleSubmit)
