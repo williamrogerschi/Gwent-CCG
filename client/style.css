@@ -174,26 +174,146 @@ select{
 input {
     background-color: rgba(156, 112, 40, 0.783);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.811) 0px 18px 36px -18px inset;
+    color: antiquewhite;
 }
 
 #freeform {
     background-color: rgba(156, 112, 40, 0.783);
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.811) 0px 18px 36px -18px inset;
+    color: antiquewhite;
 }
 
 label {
     display: block;
-    padding: 8px 12px;
+    padding: 8px 12px 8px 0px;
     font-family: 'Odibee Sans', sans-serif;
+    /* border-bottom: 2px solid black; */
 }
 
 label:last-child {
     border-bottom: none;
 }
 
+.card-text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.faction-picker {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.race-picker {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.type-picker {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.function-picker {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
 .tag-card-picker {
-    position: relative;
-    display: inline-block;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.power-picker {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.provision-picker {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 10px 0 10px 0;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+}
+
+
+/* CSS */
+.button-56 {
+  align-items: center;
+  background-color: rgb(137, 106, 57);
+  border: 2px solid rgba(10, 219, 128, 0.572);
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: antiquewhite;
+  cursor: pointer;
+  display: flex;
+  font-family: 'Odibee Sans', sans-serif;
+  font-size: 16px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-56:after {
+  background-color: rgba(10, 219, 128, 0.572);
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-56:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-56:active {
+  background-color: rgba(164, 132, 80, 1);
+  outline: 0;
+}
+
+.button-56:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-56 {
+    padding: 0 40px;
+  }
 }
 
 /* footer content */
