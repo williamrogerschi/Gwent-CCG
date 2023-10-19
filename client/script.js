@@ -22,6 +22,45 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     event.preventDefault()
     console.log("Loading")
 
+    //name field - posting to card from card editor//
+    const  cardNameInput = document.getElementById('card-name')
+   
+    cardNameInput.addEventListener('input', function(event) {
+    if(this.value.length > 0) {
+        // document.getElementById('card-name').value = cardName
+        ccgName.innerText = `${this.value}`
+    }
+})
+
+const  abilityInput = document.getElementById('freeform')
+   
+abilityInput.addEventListener('input', function(event) {
+if(this.value.length > 0) {
+    // document.getElementById('card-name').value = cardName
+    ccgAbility.innerText = `${this.value}`
+}
+})
+
+const  powerInput = document.getElementById('card-power')
+   
+powerInput.addEventListener('input', function(event) {
+if(this.value.length > 0) {
+    // document.getElementById('card-name').value = cardName
+    ccgPower.innerText = `${this.value}`
+}
+})
+
+const  provisionInput = document.getElementById('card-provision')
+   
+provisionInput.addEventListener('input', function(event) {
+if(this.value.length > 0) {
+    // document.getElementById('card-name').value = cardName
+    ccgProvision.innerText = `Provisions: ${this.value}`
+}
+})
+
+
+///calling in my database models///
     factionDB = await axios.get(`http://localhost:3001/factions`)
     console.log(factionDB)
     let factions = factionDB.data
@@ -38,7 +77,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const faction = event.target.value
     const ccgFactionName = event.target.options[event.target.selectedIndex].text
     document.getElementById('faction-choice').value = faction
-    ccgFaction.innerText = `Faction: ${ccgFactionName}`
+    ccgFaction.innerText = `${ccgFactionName}`
 }
 
     raceDB = await axios.get(`http://localhost:3001/races`)
@@ -57,7 +96,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const race = event.target.value
     const ccgRaceName = event.target.options[event.target.selectedIndex].text
     document.getElementById('race-choice').value = race
-    ccgRace.innerText = `Race: ${ccgRaceName}`
+    ccgRace.innerText = `${ccgRaceName}`
 }
 
 

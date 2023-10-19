@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&family=Roboto+Mono:ital,wght@0,200;0,300;0,600;1,200&display=swap" rel="stylesheet">
+    <link rel="icon" href="./assets/favicon.png">
 </head>
 <body>
 
@@ -31,19 +32,31 @@
         <div class="editor-container">
             <div class="preview-card">
                 <div class="card-image">
-                    <img class="iorveth" src="./assets/tumblr_19961b56ac7dd8d0fa51cf4669650af8_4c64a1ad_1280.webp">
+                    <div class="iorveth-container">
+                        <img class="iorveth" src="./assets/tumblr_19961b56ac7dd8d0fa51cf4669650af8_4c64a1ad_1280.webp">
+                    </div>
                 </div>
                 <div class="card">
                     <div class="bg-img"></div>
-                    <div class="ccg-name"></div>
-                    <div class="ccg-faction"> </div>
-                    <div class="ccg-race"> </div>
-                    <div class="ccg-cf"></div>
-                    <div class="ccg-ability"></div>
-                    <div class="ccg-tags"></div>
-                    <div class="ccg-type"></div>
-                    <div class="ccg-power"></div>
-                    <div class="ccg-provision"></div>
+                    <div class="ccg-header">
+                        <div class="header-left">
+                            <div class="ccg-power"></div>
+                            <div class="ccg-header-name">
+                                <div class="ccg-name"></div>
+                                <div class="ccg-race"> </div>
+                            </div>
+                        </div>
+                        <div class="ccg-faction"> </div>
+                    </div>
+                    <div class="ccg-body">
+                        <div class="body-top">
+                            <div class="ccg-tags"></div>
+                            <div class="ccg-cf"></div>
+                            <div class="ccg-type"></div>
+                            <div class="ccg-provision"></div>
+                        </div>
+                            <div class="ccg-ability"></div>
+                    </div>
                 </div>
                
             </div>
@@ -52,7 +65,7 @@
 
                         <!-- card-text -->
                         <div class="card-text">
-                            <label for="card-name">Card Name: </label>
+                            <label for="card-name" class="editor-name">Card Name: </label>
                             <input type="text" id="card-name" name="card-name">
                             <label for="ability">Ability: </label>
                             <textarea id="freeform" name="freeform" rows="6" cols="40"></textarea>
