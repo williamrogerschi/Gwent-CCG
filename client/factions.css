@@ -5,7 +5,7 @@ html {
 
 body {
     margin: 0;
-    background-color: rgba(0, 0, 0, 0.864);
+    background-color: rgb(30, 30, 30);
     position: relative;
     padding-bottom: 200px;
 }
@@ -23,7 +23,7 @@ body {
     height: 40vh;
     width: 100%;
     overflow: hidden;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid rgba(10, 219, 128, 0.572);
 }
 
 ul {
@@ -48,14 +48,14 @@ ul {
 a {
     padding: 0 40px 0 40px;
     text-decoration: none;
-    color: rgba(10, 219, 128, 0.572);
+    color:antiquewhite;
     height: 100%;
 }
 
 a:hover {
     padding: 0 40px 0 40px;
     text-decoration: none;
-    color: goldenrod;
+    color: rgba(10, 219, 128, 0.572);
     height: 100%;
 }
 
@@ -64,7 +64,7 @@ a:hover {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: rgb(176, 163, 163);
+    color: antiquewhite;
     font-size: 20px;
     font-family: sans-serif;
 }
@@ -81,7 +81,7 @@ h5 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px;
+    margin: 40px 250px;
 }
 
 #ng-logo {
@@ -102,7 +102,7 @@ h5 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 40px 250px;
 }
 
 #sk-logo {
@@ -123,7 +123,7 @@ h5 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 40px 250px;
 }
 
 #st-logo {
@@ -144,7 +144,7 @@ h5 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 40px 250px;
 }
 
 #nr-logo {
@@ -165,7 +165,7 @@ h5 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 40px 250px;
 }
 
 #mo-logo {
@@ -186,7 +186,7 @@ h5 {
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 40px 250px;
 }
 
 #sy-logo {
@@ -222,10 +222,10 @@ p {
 
 
 /* footer content */
-.footer-container {
-    background-color: rgba(10, 219, 128, 0.565);
+footer {
+    background-color: rgba(116, 115, 115, 0.105);
     padding: 20px 1px 20px 1px;
-    border-top: 2px solid goldenrod;
+    border-top: 2px solid rgba(10, 219, 128, 0.572);
     position: absolute;
     bottom: 0;
     width: 100%;

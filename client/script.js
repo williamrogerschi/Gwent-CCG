@@ -1,16 +1,23 @@
+////////variables for my dropdown pulls////////
 let factionDB = new Array
 let raceDB = new Array
 let typeDB = new Array
 let interactionDB = new Array
 let base = `http://localhost:3001/`
 
-//global variables
+////////GLOBAL VARIABLES////////
+const ccgName = document.querySelector('.ccg-name')
+const ccgFaction = document.querySelector('.ccg-faction')
+const ccgRace = document.querySelector('.ccg-race')
+const ccgCardFunction = document.querySelector('.ccg-cf')
+const ccgAbility = document.querySelector('.ccg-ability')
+const ccgTag = document.querySelector('.ccg-tags')
+const ccgType = document.querySelector('.ccg-type')
+const ccgPower = document.querySelector('.ccg-power')
+const ccgProvision = document.querySelector('.ccg-provision')
 
 
-
-
-
-
+////////MAIN FUNCTION////////
 window.addEventListener('DOMContentLoaded', async (event) => {
     event.preventDefault()
     console.log("Loading")
@@ -24,16 +31,17 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let factionId = factions[i]._id
         factionDropdownOptions.innerHTML += `<option value="${factionId}">${factionName}</option><\n>`
     }
-
-    //trying to log the selection//
     factionDropdownOptions.addEventListener('change', selectFaction)
             
+
     function selectFaction (event) {
     const faction = event.target.value
+    const ccgFactionName = event.target.options[event.target.selectedIndex].text
     document.getElementById('faction-choice').value = faction
+    ccgFaction.innerText = `Faction: ${ccgFactionName}`
 }
 
-    raceDB = await axios.get(`http://localhost:3001/races`) //FormData this is what we would do to get it onto our card local
+    raceDB = await axios.get(`http://localhost:3001/races`)
     console.log(raceDB)
     let races = raceDB.data
     const raceDropdownOptions = document.querySelector(`#race-card-picker`)
@@ -42,12 +50,14 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let raceId = races[i]._id
         raceDropdownOptions.innerHTML += `<option value="${raceId}">${raceName}</option><\n>`
     }
-
    raceDropdownOptions.addEventListener('change', selectRace)
-            
+          
+   
     function selectRace (event) {
     const race = event.target.value
+    const ccgRaceName = event.target.options[event.target.selectedIndex].text
     document.getElementById('race-choice').value = race
+    ccgRace.innerText = `Race: ${ccgRaceName}`
 }
 
 
@@ -60,12 +70,14 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let typeId = types[i]._id
         typeDropdownOptions.innerHTML += `<option value="${typeId}">${typeName}</option><\n>`
     }
-
     typeDropdownOptions.addEventListener('change', selectType)
             
+
     function selectType (event) {
     const type = event.target.value
+    const ccgTypeName = event.target.options[event.target.selectedIndex].text
     document.getElementById('type-choice').value = type
+    ccgType.innerText = `Card Type: ${ccgTypeName}`
 }
 
     interactionDB = await axios.get(`http://localhost:3001/interactions`)
@@ -77,12 +89,14 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let interactionId = interaction[i]._id
         interactionDropdownOptions.innerHTML += `<option value="${interactionId}">${interactionName}</option><\n>`
     }
-
     interactionDropdownOptions.addEventListener('change', selectInteraction)
             
+
     function selectInteraction (event) {
     const interaction = event.target.value
+    const ccgInteraction = event.target.options[event.target.selectedIndex].text
     document.getElementById('function-choice').value = interaction
+    ccgCardFunction.innerText = `Playability: ${ccgInteraction}`
 }
 
     tagDB = await axios.get(`http://localhost:3001/tags`)
@@ -94,80 +108,28 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let tagId = tags[i]._id
         tagDropdownOptions.innerHTML += `<option value="${tagId}">${tagName}</option><\n>`
     }
-
     tagDropdownOptions.addEventListener('change', selectTag)
       
+
     let tagArray = []
+
     function selectTag(event) {
     const tag = event.target.value
     tagArray.push(tag)
     console.log(tagArray)
-
-    // Join the tagArray into a comma-separated string for FormData
+//Joining the tagArray into a comma-separated string for FormData//
     const tagString = tagArray.join(',')
-
+    const ccgTags = event.target.options[event.target.selectedIndex].text
     document.getElementById('tag-choice').value = tagString
-}
-    // let tagArray = []
-    // function selectTag (event) {
-    // const tag = event.target.value
-    // tagArray.push(tag)
-    // console.log(tagArray)
-    // document.getElementById('tag-choice').value = tagArray
-    // }
+    ccgTag.insertAdjacentHTML ("beforeend", `${ccgTags} `)
+    }
 })
 
-// function for the dropdown for multiple tags being selected //
-// document.addEventListener("DOMContentLoaded", function (event) {
-//     event.preventDefault()
-//     const dropdown = document.querySelector(".tag-card-picker")
-//     const dropdownContent = dropdown.querySelector(".dropdown-content")
-//     const checkboxes = dropdownContent.querySelectorAll("input[type='checkbox']")
-//     const dropbtn = dropdown.querySelector(".dropbtn")
-//     const selectedItems = []
-
-//     dropbtn.addEventListener("click", function (event) {
-//         event.preventDefault()
-//         dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block"
-//     })
-
-//     checkboxes.forEach(function (checkbox) {
-//         checkbox.addEventListener("change", function () {
-//             const itemValue = checkbox.value
-//             if (checkbox.checked) {
-//                 selectedItems.push(itemValue)
-//             } else {
-//                 const index = selectedItems.indexOf(itemValue)
-//                 if (index !== -1) {
-//                     selectedItems.splice(index, 1)
-//                 }
-//             }
-//             // Log the selected items
-//             console.log("Selected items: " + selectedItems.join(", "))
-//         })
-//     })
-//     // Close the dropdown when clicking outside
-//     window.addEventListener("click", function (event) {
-//         if (!event.target.matches('.dropbtn')) {
-//             dropdownContent.style.display = 'none'
-//         }
-//     })
-//     // Prevent closing the dropdown when clicking inside it
-//     dropdownContent.addEventListener("click", function (event) {
-//         event.stopPropagation()
-//     })
-// })
-
-
-
-
-
 //function to submit my object to BACKEND//
-
 async function handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    const data = new FormData(event.target);
+    const data = new FormData(event.target)
 
     const name = data.get('card-name')
     const ability = data.get('freeform')
@@ -175,14 +137,12 @@ async function handleSubmit(event) {
     const race = data.get('race-choice')
     const cardType = data.get('type-choice')
     const cardFunction = data.get('function-choice')
-    const tag = data.get('tag-choice').split(',');
-    // const tag = data.get('tag-choice')
+    const tag = data.get('tag-choice').split(',')
     const power = data.get('card-power')
     const provision = data.get('card-provision')
     const imgURL = data.get('img-picker')
 
     console.log({ name, ability, faction, race, cardType, cardFunction, tag, power, provision, imgURL })
-    console.log(data);
 
 
     try {
@@ -204,6 +164,5 @@ async function handleSubmit(event) {
         console.error(error)
     }
 }
-
 const form = document.querySelector('.custom-card-editor')
 form.addEventListener('submit', handleSubmit)
