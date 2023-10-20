@@ -29,77 +29,107 @@
      </div>
 
      <div class="main-content">
-        <h2 id="archetype-header">Archetypes per Faction</h2>
-        <div id="arch-img-container">
-            <div id="archetype-img"><img src="./assets/archetype.jpg"></div>
-        </div>
-        <div id="content-body">
-            <p id="arch-text">In Gwent: The Witcher Card Game, players have a choice of six factions that each have their own unique characteristics. These factions are Monsters (abbreviated MO, with a Red card back), Skellige (SK, Purple), Scoia'Tael (ST, Green), Northern Realms (NR, Blue),  Nilfgaard (NG, Black), and Syndicate (SY, Orange). One of the most interesting aspects of Gwent is that the experience playing each faction is different, and among the factions, there are many several decks and archetypes that players can choose to use. Each faction is based on the lore of Witcher (except for SY) that is somewhat translated into the playstyle and mechanics of the faction.</p>
+        <div class="header-img">
+            <h2 id="header-title">Archetypes per Faction</h2>
+            <div id="content-body">
+                <p id="arch-text">In Gwent: The Witcher Card Game, players have a choice of six factions that each have their own unique characteristics. These factions are Monsters (abbreviated MO, with a Red card back), Skellige (SK, Purple), Scoia'Tael (ST, Green), Northern Realms (NR, Blue),  Nilfgaard (NG, Black), and Syndicate (SY, Orange). One of the most interesting aspects of Gwent is that the experience playing each faction is different, and among the factions, there are many several decks and archetypes that players can choose to use. Each faction is based on the lore of Witcher (except for SY) that is somewhat translated into the playstyle and mechanics of the faction.</p>
+            </div>
         </div>
 
         <!-- MO -->
-            <div id="content-body">
-                <h2 id="archetype-header">Archetypes of the Monster Faction</h2>
-                <p><strong>Swarm:</strong> A strategy that involves creating multiple, weaker units to overwhelm the opponent.</p>
-                <p><strong>Midrange:</strong> A strategy where players use efficient, high-value units that gain their maximum value immediately. These units are usually called "tall" units because they are big and have a high value.</p>
-            <h2 id="archetype-header">Mechanics of the Monster Faction</h2>
-                <p><strong>Thrive:</strong> When on the board, units with Thrive gain one value whenever a unit with a higher value is played.</p>
-                <p><strong>Deathwish:</strong> Units with abilities that activate once they've been killed.</p>
-                <p><strong>Consume:</strong> Units with abilities that activate by killing an allied unit.</p>
+         <div class="monsters-container">
+            <div class="monsters-text">
+                <div class="content-body">
+                    <h2 class="archetype-header">Archetypes of the Monster Faction</h2>
+                    <p>Swarm: A strategy that involves creating multiple, weaker units to overwhelm the opponent.</p>
+                    <p>Midrange: A strategy where players use efficient, high-value units that gain their maximum value immediately. These units are usually called "tall" units because they are big and have a high value.</p>
+                <h2 class="archetype-header">Mechanics of the Monster Faction</h2>
+                    <p>Thrive: When on the board, units with Thrive gain one value whenever a unit with a higher value is played.</p>
+                    <p>Deathwish: Units with abilities that activate once they've been killed.</p>
+                    <p>Consume: Units with abilities that activate by killing an allied unit.</p>
+                </div>
             </div>
+            <img id="monster-pic" src="./assets/monsters.jpg">
+        </div>
 
         <!-- SK -->
-            <h2 id="archetype-header">Archetypes of the Skellige Faction</h2>
-            <div id="content-body">
-                <p><strong>Resurrection:</strong> While this archetype isn't exclusive to Skellige, SK has many more instances of this mechanic. This refers to the focus on playing units and using abilities from the graveyard. These units combo well with other mechanics that Skellige uses, such as Discard and sometimes Berserk.</p>
-                <h2 id="archetype-header">Mechanics of the Skellige Faction</h2>
-                <p><strong>Discard:</strong> Units that gain their effect when discarded.
-                Berserk: Units that gain their effect when they've reached the specified damage threshold.</p>
-                <p><strong>Bloodthirst:</strong> Units that gain their effect when enemies are damaged.</p>
-            </div>
-        <!-- ST -->
-            <h2 id="archetype-header">Archetypes of the Scoia´tael Faction</h2>
-            <div id="content-body">
-                <p><strong>Swarm:</strong> Players can create strong swarm decks by using units with the Elf or Dwarf tag since they tend to combo well with other units of the same tag. </p>
-                <p><strong>Highlander:</strong> Highlander decks refer to decks that only have a single copy of each card in it. With the Harmony keyword, this makes the deckbuilding restriction much easier to overcome.</p>
-            <h2 id="archetype-header">Mechanics of the Scoia´tael Faction</h2>
-                <p><strong>Movement:</strong> Moves cards into different rows, which can render them useless.</p>
-                <p><strong>Harmony:</strong> Harmony cards gain one value when a card with a different tag is played.</p>
+
+            <div class="sk-container">
+                <div class="sk-text">
+                    <div class="content-body">
+                        <h2 class="archetype-header">Archetypes of the Skellige Faction</h2>
+                        <p>Resurrection: While this archetype isn't exclusive to Skellige, SK has many more instances of this mechanic. This refers to the focus on playing units and using abilities from the graveyard. These units combo well with other mechanics that Skellige uses, such as Discard and sometimes Berserk.</p>
+                        <h2 class="archetype-header">Mechanics of the Skellige Faction</h2>
+                        <p>Discard: Units that gain their effect when discarded.</p>
+                        <p>Berserk: Units that gain their effect when they've reached the specified damage threshold.</p>
+                        <p>Bloodthirst: Units that gain their effect when enemies are damaged.</p>
+                    </div>
                 </div>
-        <!-- NR -->
-        <h2 id="archetype-header">Archetypes of the Northern Realms Faction</h2>
-        <div id="content-body">
-            <p><strong>Engine Control:</strong> One of the best decks in the game uses Engines in order to gain tons of value over time. Engines aren't strong on their own since the opponent can take them out, but combined with other protective cards, they can easily win rounds.</p>
-            <p><strong>Boost:</strong> With Order, players can boost themselves and their allies in order to keep a board with high value. This strategy is not too concerned with what the opponent is playing.</p>
-        <h2 id="archetype-header">Mechanics of the Northern Realms Faction</h2>
-            <p><strong>Order:</strong> Units with Order will boost the value of themselves or allies, or damage enemy units.</p>
-            <p><strong>Harmony:</strong> Harmony cards gain one value when a card with a different tag is played.</p>
+                <img id="sk-pic" src="./assets/sk.jpg">
             </div>
+
+        <!-- ST -->
+
+            <div class="st-container">
+                <div class="st-text">
+                    <div class="content-body">
+                        <h2 class="archetype-header">Archetypes of the Scoia´tael Faction</h2>
+                        <p>Swarm: Players can create strong swarm decks by using units with the Elf or Dwarf tag since they tend to combo well with other units of the same tag. </p>
+                        <p>Highlander: Highlander decks refer to decks that only have a single copy of each card in it. With the Harmony keyword, this makes the deckbuilding restriction much easier to overcome.</p>
+                    <h2 class="archetype-header">Mechanics of the Scoia´tael Faction</h2>
+                        <p>Movement: Moves cards into different rows, which can render them useless.</p>
+                        <p>Harmony: Harmony cards gain one value when a card with a different tag is played.</p>
+                    </div>
+                </div>
+                <img id="st-pic" src="./assets/ST.jpeg">
+            </div>
+       
+            <!-- NR -->
+
+        <div class="nr-container">
+            <div class="nr-text">
+                <div class="content-body">
+                    <h2 class="archetype-header">Archetypes of the Northern Realms Faction</h2>
+                    <p>Engine Control: One of the best decks in the game uses Engines in order to gain tons of value over time. Engines aren't strong on their own since the opponent can take them out, but combined with other protective cards, they can easily win rounds.</p>
+                    <p>Boost: With Order, players can boost themselves and their allies in order to keep a board with high value. This strategy is not too concerned with what the opponent is playing.</p>
+                <h2 class="archetype-header">Mechanics of the Northern Realms Faction</h2>
+                    <p>Order: Units with Order will boost the value of themselves or allies, or damage enemy units.</p>
+                </div>
+            </div>
+            <img id="nr-pic" src="./assets/nr.jpeg">
+        </div>
 
         <!-- NG -->
-        <h2 id="archetype-header">Archetypes of the Nilfgaard Faction</h2>
-        <div id="content-body">
-            <p><strong>Soldiers:</strong>Nilfgaard uses a lot of Soldier type units that tend to benefit when used in conjunction with each other.</p>
-            <p><strong>Control:</strong> A strategy that focuses on lengthening the rounds of the map and slowly using up the opponent's resources. It makes the game a sort of war of attrition.</p>
-        <h2 id="archetype-header">Mechanics of the Nilfgaard Faction</h2>
-            <p><strong>Spy:</strong> Units that are played onto the opponent's board. It gives them value but gives the player that played them even more.</p>
-            <p><strong>Assimilate:</strong> These units generate random cards that players can then use.</p>
+        <div class="ng-container">
+            <div class="ng-text">
+                <div class="content-body">
+                    <h2 class="archetype-header">Archetypes of the Nilfgaard Faction</h2>
+                    <p>Soldiers: Nilfgaard uses a lot of Soldier type units that tend to benefit when used in conjunction with each other.</p>
+                    <p>Control:A strategy that focuses on lengthening the rounds of the map and slowly using up the opponent's resources. It makes the game a sort of war of attrition.</p>
+                <h2 class="archetype-header">Mechanics of the Nilfgaard Faction</h2>
+                    <p>Spy: Units that are played onto the opponent's board. It gives them value but gives the player that played them even more.</p>
+                    <p>Assimilate: These units generate random cards that players can then use.</p>
+                </div>
             </div>
+            <img id="ng-pic" src="./assets/nilfgard.jpg">
+        </div>
         
             <!-- SY -->
-        <h2 id="archetype-header">Archetypes of the Syndicate Faction</h2>
-        <div id="content-body">
-            <p><strong>Swarm:</strong>Using Coin effects, the SY Faction can generate a lot of units and overwhelm the opponent.</p>
-            <p><strong>Midrange:</strong> This strategy combines efficient, high-value units with the extra value generated from Coin effects to out value the opponent.</p>
-        <h2 id="archetype-header">Mechanics of the Syndicate Faction</h2>
-            <p><strong>Coins:</strong> A resource gained by leaders and units that can be spent by other units to activate different effects</p>
-            <p><strong>Crime:</strong> Special and Spell cards that boost allies, damage enemies, and generate Coins.</p>
+
+        <div class="sy-container">
+            <div class="sy-text">
+                <div class="content-body">
+                    <h2 class="archetype-header">Archetypes of the Syndicate Faction</h2>
+                    <p>Swarm: Using Coin effects, the SY Faction can generate a lot of units and overwhelm the opponent.</p>
+                    <p>Midrange:This strategy combines efficient, high-value units with the extra value generated from Coin effects to out value the opponent.</p>
+                <h2 class="archetype-header">Mechanics of the Syndicate Faction</h2>
+                    <p>Coins: A resource gained by leaders and units that can be spent by other units to activate different effects</p>
+                    <p>Crime: Special and Spell cards that boost allies, damage enemies, and generate Coins.</p>
+                </div>
             </div>
-
-
-
-
-            </div>
+            <img id="sy-pic" src="./assets/sy.jpeg">
+        </div>
+    </div>
 
      </div>
 

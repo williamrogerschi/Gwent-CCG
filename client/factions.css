@@ -92,7 +92,7 @@ h5 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: goldenrod;
+    color: rgba(218, 165, 32, 0.744);
     font-size: 30px;
     font-family: 'Odibee Sans', sans-serif;
 }
@@ -113,7 +113,7 @@ h5 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: purple;
+    color: rgb(61, 27, 75);
     font-size: 30px;
     font-family: 'Odibee Sans', sans-serif;
 }
@@ -134,7 +134,7 @@ h5 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: green;
+    color: rgba(0, 128, 0, 0.806);
     font-size: 30px;
     font-family: 'Odibee Sans', sans-serif;
 }
@@ -155,7 +155,7 @@ h5 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: blue;
+    color: rgb(12, 31, 143);
     font-size: 30px;
     font-family: 'Odibee Sans', sans-serif;
 }
@@ -176,7 +176,7 @@ h5 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: red;
+    color: rgb(112, 7, 7);
     font-size: 30px;
     font-family: 'Odibee Sans', sans-serif;
 }
@@ -197,7 +197,7 @@ h5 {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    color: orange;
+    color: rgb(96, 65, 9);
     font-size: 30px;
     font-family: 'Odibee Sans', sans-serif;
 }

@@ -6,7 +6,7 @@ html {
 body {
     margin: 0;
     background-color: rgba(0, 0, 0, 0.864);
-    background-image: url('./assets/yusuf-artun-tavern-artstation-01.jpg');
+    background-image: url('./assets/gwent_board.png');
     background-size: cover;
     position: relative;
     padding-bottom: 200px;
@@ -258,7 +258,7 @@ label:last-child {
 
 
 /* CSS */
-.button-56 {
+.submit-btn {
   align-items: center;
   background-color: rgb(137, 106, 57);
   border: 2px solid rgba(10, 219, 128, 0.572);
@@ -282,7 +282,7 @@ label:last-child {
   touch-action: manipulation;
 }
 
-.button-56:after {
+.submit-btn:after {
   background-color: rgba(10, 219, 128, 0.572);
   border-radius: 8px;
   content: "";
@@ -297,24 +297,19 @@ label:last-child {
   z-index: -1;
 }
 
-.button-56:hover:after {
+.submit-btn:hover:after {
   transform: translate(0, 0);
 }
 
-.button-56:active {
+.submit-btn:active {
   background-color: rgba(164, 132, 80, 1);
   outline: 0;
 }
 
-.button-56:hover {
+.submit-btn:hover {
   outline: 0;
 }
 
-@media (min-width: 768px) {
-  .button-56 {
-    padding: 0 40px;
-  }
-}
 
 /* footer content */
 footer {
