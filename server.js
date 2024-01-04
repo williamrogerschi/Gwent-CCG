@@ -1,5 +1,5 @@
 const express = require('express')
-const db = require('./db')
+const connectDB = require('./db/index.js')
 const cors = require('cors')
 const logger = require('morgan')
 const bodyParser = require('body-parser')
@@ -22,8 +22,14 @@ app.use(logger('dev'))
 app.use(express.json())
 app.use(bodyParser.json())
 
+connectDB()
+    .then((db) => {
+        app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
+    })
+    .catch((error) => console.error(error))
+
+
 ////////MAIN BODY////////
-//homepage
 app.get('/', (req, res) => res.send('I am a Gwent homepage, and you will not break me!'))
 
 //factions
@@ -69,4 +75,4 @@ app.put('/cards/:id', cardController.updateCard)
 app.delete('/cards/:id', cardController.deleteCard)
 
 
-app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))
+// app.listen(PORT, () => console.log(`Listening on port: ${PORT}`))

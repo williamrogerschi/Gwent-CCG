@@ -2,7 +2,7 @@ const db = require('../db/index')
 
 const { Card, Faction, Race, Tag, CardFunction, Type } = require('../models/ccIndex.js')
 
-db.on('error', console.error.bind(console, `MongoDB connection error:`))
+// db.on('error', console.error.bind(console, `MongoDB connection error:`))
 
 const main = async () => {
 

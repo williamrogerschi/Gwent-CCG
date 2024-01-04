@@ -3,7 +3,14 @@ let factionDB = new Array
 let raceDB = new Array
 let typeDB = new Array
 let interactionDB = new Array
-let base = `http://localhost:3001/`
+// let base = `http://localhost:3001/`
+
+let base = 'http://localhost:3001/'
+
+if(process.env.NODE_ENV === 'production') {
+    BASE_URL = 'https://bike-labs-4b05568e3735.herokuapp.com/'
+}
+
 
 ////////GLOBAL VARIABLES////////
 const ccgName = document.querySelector('.ccg-name')
@@ -61,7 +68,7 @@ if(this.value.length > 0) {
 
 
 ///calling in my database models///
-    factionDB = await axios.get(`http://localhost:3001/factions`)
+    factionDB = await axios.get(`${base}factions`)
     console.log(factionDB)
     let factions = factionDB.data
     const factionDropdownOptions = document.querySelector('#faction-card-picker')
@@ -80,7 +87,7 @@ if(this.value.length > 0) {
     ccgFaction.innerText = `${ccgFactionName}`
 }
 
-    raceDB = await axios.get(`http://localhost:3001/races`)
+    raceDB = await axios.get(`${base}races`)
     console.log(raceDB)
     let races = raceDB.data
     const raceDropdownOptions = document.querySelector(`#race-card-picker`)
@@ -100,7 +107,7 @@ if(this.value.length > 0) {
 }
 
 
-    typeDB = await axios.get(`http://localhost:3001/types`)
+    typeDB = await axios.get(`${base}types`)
     console.log(typeDB)
     let types = typeDB.data
     const typeDropdownOptions = document.querySelector(`#type-card-picker`)
@@ -119,7 +126,7 @@ if(this.value.length > 0) {
     ccgType.innerText = `Card Type: ${ccgTypeName}`
 }
 
-    interactionDB = await axios.get(`http://localhost:3001/interactions`)
+    interactionDB = await axios.get(`${base}interactions`)
     console.log(interactionDB)
     let interaction = interactionDB.data
     const interactionDropdownOptions = document.querySelector(`#cf-card-picker`)
@@ -138,7 +145,7 @@ if(this.value.length > 0) {
     ccgCardFunction.innerText = `Playability: ${ccgInteraction}`
 }
 
-    tagDB = await axios.get(`http://localhost:3001/tags`)
+    tagDB = await axios.get(`${base}tags`)
     console.log(tagDB)
     let tags = tagDB.data
     const tagDropdownOptions = document.querySelector(`#tag-card-picker`)
@@ -185,7 +192,7 @@ async function handleSubmit(event) {
 
 
     try {
-        const card = await axios.post(`http://localhost:3001/cards`, {
+        const card = await axios.post(`${base}cards`, {
             name: name,
             faction: faction,
             race: race,
